@@ -1,0 +1,33 @@
+<div class="demoapp-container">
+    <span class="demoapp-logo" routerLink="">Demo App</span>
+    <div class="demoapp-nav">
+     <span class="Home" routerLink=""> HOME</span>
+     <span class="AboutUs">ABOUT US</span>
+     <span class="Jobs">JOBS</span>
+     <span class="Clients">CLIENTS</span>
+     <span class="Employess">EMPLOYEES</span>
+    <span class="ContactUs">CONTACT US</span>
+    </div>
+    
+    </div>
+    
+    <div class="mobile-container" id="mobile-container" (click)=openMobileNav($event)>
+        <div class="top"></div>
+        <div class="middle"></div>
+        <div class="bottom"></div>
+        
+         
+        </div>
+       
+    <div class="mobile-nav" id="mobile-nav">
+    <span class="closeBtn" (click)=closeMobileNav()>&times;</span>
+    <li routerLink="">HOME</li>
+    <li routerLink="profile">Profile</li>
+    <li>ABOUT US</li>
+    <li>JOBS</li>
+    <li>CLIENTS</li>
+    <li>EMPLOYEES</li>
+    <li>CONTACT US</li>
+    </div>
+    
+    

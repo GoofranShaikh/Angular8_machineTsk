@@ -1,0 +1,78 @@
+.midhome{
+    &-container{
+        background-color: #fefefe;
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        flex-wrap: nowrap;
+        align-items: center;
+        color:grey;
+    }
+    &-ribbon{
+        position:relative;
+        top:-4px;
+        width:100vw;
+        border:none;
+      
+    }
+    &-leaders{
+        padding-top: 40px;
+        font-size: 30px;
+        padding-bottom: 10px;
+        
+    }
+    &-recruitment{
+        text-align: center;
+        font-size: 40px;
+        padding-bottom: 20px;
+        
+    }
+
+    .seprator{
+        height: 3px;
+        margin-bottom: 20px;
+        width: 100px;
+        background-color: skyblue;
+    }
+    &-place{
+        text-align: center;
+
+        p{
+            padding-bottom: 50px;
+        }
+    }
+    &-aboutus{
+        padding: 9px;
+        color: skyblue;
+        border: 3px skyblue;
+        border-style: outset;
+        text-decoration: none;
+        margin-bottom: 40px;
+    }
+    &-mailing{
+        position: relative;
+        top: -4px;
+        height:30vh;
+        width:100vw;
+        background-color: #292444;
+        color:white;
+        text-align: center;
+    }
+    &-subscribe{
+        position: relative;
+        top:40%
+    }
+    &-email{
+        position: relative;
+        top:40%;
+        background:transparent;
+        border:2px solid skyblue;
+        color:white;
+        height:30px;
+        border-radius: 4px;
+
+    }
+
+
+
+}

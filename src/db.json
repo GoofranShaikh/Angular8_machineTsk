@@ -1,0 +1,22 @@
+{
+    "Register": [
+      {
+        "id": 55,
+        "profile": "",
+        "FirstName": "Goofran",
+        "LastName": "shaikh",
+        "Email": "goofranshaikh98@gmal.com",
+        "MobileNo": "9876573832",
+        "Age": 40,
+        "State": "Maharashtra",
+        "Country": "India",
+        "Address": {
+          "Home": {
+            "Address1": "Thane",
+            "Address2": "Mumbai"
+          },
+          "Company": {}
+        },
+        "tags": "Football"
+      }
+    ]}

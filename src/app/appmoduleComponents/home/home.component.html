@@ -1,0 +1,30 @@
+<div class="home">
+    <img src="../../../assets/images/bg.jpg" alt="homePage" class="home-bgimage">
+    <div class="home-content">
+        <i class=lookingfor> I'm looking for..</i>
+         <form >
+           <input type="text" placeholder="Search.." class="search" name="search">
+           <button type="submit" class="submit">Search</button>
+         </form>
+         <div class="searchlocation">
+         <input type="checkbox" id="fulltime" class="fulltime" name="fulltime" value="fulltime">
+         <label for="fulltime" class="fulltime"><i> Full Time </i></label>
+         <input type="checkbox" id="parttime" class="parttime" name="parttime" value="parttime">
+         <label for="parttime" class="parttime"><i>Part Time/Casual/Part Time </i> </label>
+         <select name="yourlocation" id="yourlocation" class="yourlocation" placeholder="select your location">
+          <option value="Mumbai">Mumbai</option>
+          <option value="Pune">Pune</option>
+          <option value="Nagpur">Nagpur</option>
+       
+         </select>
+         <div class=" registration"><button class="register" id="register" (click)=openRegisterModal()>Register</button></div>  <!-- fires the register form modal -->
+         </div>
+       
+       
+       
+         
+       </div>
+
+</div>
+<app-form></app-form>
+<app-midsection-home></app-midsection-home>

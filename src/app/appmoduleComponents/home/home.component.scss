@@ -1,0 +1,77 @@
+$font-color:white;
+.home{
+    &-bgimage{
+        width:100vw;
+        height:90vh;
+
+    }
+
+    &-content{
+        position: absolute;
+        top: 43vh;
+        left: 10vw;
+        color:$font-color;
+
+        .lookingfor{
+            font-size: 52px;
+        }
+        .search{
+            width:50rem;
+            height:2.5rem;
+            border: none;
+            margin-right:2rem;
+        }
+        .submit{
+            height:2.5rem;
+            width:5rem;
+            border: none;
+            color:$font-color;
+            background-color: skyblue;
+          
+        }
+        .searchlocation{
+            .fulltime{
+                font-size:20px;
+                padding-right: 10px;
+                border:none;
+            }
+            .parttime{
+                font-size:20px;
+                padding-right: 10vw;
+                border:none;
+            }
+            .yourlocation{
+                height:2rem;
+                width:10rem;
+                margin-top: 32px;
+                border:none
+            }
+            .register{
+                position: absolute;
+                background-color: skyblue;
+                color: white;
+                left: 11vw;
+                margin-top: 21px;
+                width: 6rem;
+                height: 2rem;
+                border: none;
+                &:hover{
+                 cursor:pointer
+                }
+            }
+        }
+    }
+
+
+    @media only screen and (max-width: 600px) {
+        &-content{  
+          top: 20vw;
+          left: 21px;
+          font-size: 31px;
+          .search{
+              width: 13rem;
+              height: 2.5rem;
+          }
+        }
+    }
+}
