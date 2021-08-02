@@ -90,6 +90,14 @@ $font-color:white;
               background-color:#4890f3;
               color:white;
           }
+          .clear{
+            margin-right:40px;
+            border:0.5px solid grey;
+            padding:10px 20px;
+            background-color:white;
+            color:black;
+
+          }
       }
   }
   @media only screen and (max-width: 600px) {
@@ -126,4 +134,8 @@ $font-color:white;
       }
 
   }
+}
+
+#tags{
+  width:60%
 }

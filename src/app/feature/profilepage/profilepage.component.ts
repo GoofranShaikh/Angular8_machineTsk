@@ -11,6 +11,7 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class ProfilepageComponent implements OnInit {
   userProfile:any=[]
+  lastUser:any=[]
   image:any
   address:string
   url='http://localhost:4200/assets/images/profile.png'
@@ -46,6 +47,7 @@ export class ProfilepageComponent implements OnInit {
     openRegisterModal():void{
       document.getElementById("myModal").style.display="block"
       this.service.getUserProfile(this.userProfile[this.userProfile.length-1].id).subscribe((update:Schema)=>{
+
         this.url=update.profile
         console.log(update)
         this.getValueinForm(update)
@@ -100,7 +102,8 @@ export class ProfilepageComponent implements OnInit {
     this.userProfile[this.userProfile.length-1].Address.Home.Address2= this.userProfile[this.userProfile.length-1].Address.Home.Address2
     this.userProfile[this.userProfile.length-1].Address.Company.Address1=this.userProfile[this.userProfile.length-1].Address.Company.Address1
     this.userProfile[this.userProfile.length-1].Address.Company.Address2=this.userProfile[this.userProfile.length-1].Address.Company.Address2
-    this.userProfile[this.userProfile.length-1].Address.tags=this.userProfile[this.userProfile.length-1].Address.tags
+    this.userProfile[this.userProfile.length-1].tags.value=this.userProfile[this.userProfile.length-1].tags.value
+    this.userProfile[this.userProfile.length-1].newsletter=this.userProfile[this.userProfile.length-1].newsletter
   
   }
   makeProfile(){
@@ -129,7 +132,9 @@ export class ProfilepageComponent implements OnInit {
      
       },[Validators.required]),
       
-        tags:new FormControl('',[Validators.required])
+        tags:new FormControl('',[Validators.required]),
+        newsletter:new FormControl()
+
       
     });
   
@@ -160,7 +165,8 @@ export class ProfilepageComponent implements OnInit {
       }
       },
       
-        tags:update.tags
+        tags:update.tags,
+        newsletter:update.newsletter
     })
   
   }

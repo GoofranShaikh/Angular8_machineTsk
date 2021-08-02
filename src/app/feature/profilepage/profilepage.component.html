@@ -3,13 +3,20 @@
 <div class="name">Profile</div><br>
 
 <img *ngIf="userProfile[userProfile.length-1].profile"  src="{{userProfile[userProfile.length-1].profile}}"  class="profile-image"  alt="user profile">
-<input class="profile-editphoto" type="file"   (change)=EditPhoto(userProfile[userProfile.length-1].id,$event)>
+<input class="profile-editphoto" type="file" ngDefaultControl  (change)=EditPhoto(userProfile[userProfile.length-1].id,$event)>
 <button class="register" id="register" (click)=openRegisterModal()>Edit</button>
 
 </div>
-<div class="profile-intro">i'm {{userProfile[userProfile.length-1].FirstName}} {{userProfile[userProfile.length-1].LastName}} and  i m  {{userProfile[userProfile.length-1].Age}} years and you can send your email to <a style="color:blue">{{userProfile[userProfile.length-1].Email}}</a>.
-  i live in state of {{userProfile[userProfile.length-1].State}}. i like to play {{userProfile[userProfile.length-1].tags}}. And please send me news letter.Please rech out to me on my phone number {{userProfile[userProfile.length-1].MobileNo}}
-</div>
+<span class="profile-intro">i'm {{userProfile[userProfile.length-1].FirstName}} {{userProfile[userProfile.length-1].LastName}} and  i m  {{userProfile[userProfile.length-1].Age}} years and you can send your email to <a style="color:blue">{{userProfile[userProfile.length-1].Email}}</a>.
+  i live in state of {{userProfile[userProfile.length-1].State}}. i am interested in
+       <span *ngFor='let hobby of userProfile[userProfile.length-1].tags; let first = first; let last = last; '>
+                  <span *ngIf="first">{{ hobby.display}} </span>
+                  <span *ngIf="!first && !last"> , {{ hobby.display}} and  </span>
+                  <span *ngIf="last">  {{ hobby.display}}</span>
+                 
+                </span>
+  . And please send me news letter.Please rech out to me on my phone number {{userProfile[userProfile.length-1].MobileNo}}
+              </span>
 
 </div>
 
@@ -80,10 +87,13 @@
     </div>
     <div class="text-danger" style="color:red" *ngIf="this.address=='' && profileForm.get('Address').untouched  ">This is required field</div>
     </div>
-      <div class="tags"><input class="fullwidth tags formfield" formControlName="tags" type="text" placeholder="tags">
-        <div class="text-danger" style="color:red" *ngIf="this.profileForm.get('tags').errors && this.profileForm.get('tags').touched">This is required field</div>
-
-      </div>
+    <div class="tags"><tag-input id="tags" name="tags" [(ngModel)]='tags'  class="fullwidth tags formfield" formControlName="tags" type="text" placeholder="tags"></tag-input>
+      <div class="text-danger" style="color:red" *ngIf="this.profileForm.get('tags').errors && this.profileForm.get('tags').touched">This is required field</div>
+    </div>
+    <div class="newsletter">
+      <input type="checkbox"  formControlName="newsletter"> Sbscribe to newsletter
+    </div>
+    <button  class="clear" (click)= "closeRegisterModal()">Clear</button>
       <button type="submit" class="submit" [disabled]='!profileForm.valid'>Submit</button>
     </form>
   </div>

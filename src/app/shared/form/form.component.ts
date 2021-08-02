@@ -1,3 +1,4 @@
+import { TagContentType } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -21,6 +22,12 @@ export class FormComponent implements OnInit {
   isEmailValid: boolean=false;
   isFnameValid: boolean=false;
   isMobileNoValid: boolean=false;
+
+  tags = [
+    // { value: 'Cricket', display: 'Cricket' },
+    // { value: 'Football', display: 'Football' },
+    // { value: 'Hockey', display: 'Hockey' }
+  ];
  
   constructor(private service:HttpService, private router:Router) { }
 
@@ -31,7 +38,9 @@ export class FormComponent implements OnInit {
    
 
 
-    console.log(this.url)
+   
+
+  
   }
 
   closeRegisterModal():void{
@@ -93,7 +102,8 @@ export class FormComponent implements OnInit {
      
       },[Validators.required]),
       
-        tags:new FormControl('',[Validators.required])
+        tags:new FormControl('',[Validators.required]),
+        newsletter:new FormControl()
       
     });
 
@@ -117,6 +127,10 @@ export class FormComponent implements OnInit {
     var regex=new RegExp(/^((\+)?(\d{2}[-]))?(\d{10}){1}?$/)       //	This Pattern is to Validate Mobile Number with 10 digit Number and Countrycode as Optional.
     this.isMobileNoValid=regex.test(mobile)
     return this.isMobileNoValid
+  }
+  
+  tagChange(){
+    console.log(this.tags)
   }
 
 }

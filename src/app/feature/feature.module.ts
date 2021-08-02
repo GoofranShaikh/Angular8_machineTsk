@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { TagInputModule } from 'ngx-chips';
+//import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // this is needed
 import { FeatureRoutingModule } from './feature-routing.module';
 import { CommonModule } from '@angular/common';
 import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
@@ -10,6 +12,7 @@ import { ProfilepageComponent } from './profilepage/profilepage.component';
 @NgModule({
   declarations: [ProfilepageComponent],
   imports: [
+    TagInputModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,

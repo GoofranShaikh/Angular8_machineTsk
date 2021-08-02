@@ -18,8 +18,10 @@ export interface Schema {
       {
         id:number,
         hobby: string
-      }
+      },
+     
     ]
+    newsletter:boolean
 
   }
 interface Home{

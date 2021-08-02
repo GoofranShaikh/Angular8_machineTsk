@@ -9,8 +9,8 @@
  
     <span class="close" (click)=closeRegisterModal()>&times;</span>
     <div class=header>Register</div>
-    <form  class="registerForm" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-    <img [src]="url" alt="profile picture" formControlName="profile"  class="profile"> 
+    <form  class="registerForm" [formGroup]="profileForm"  (ngSubmit)="onSubmit()">
+    <img [src]="url" alt="profile picture" formControlName="profile" ngDefaultControl class="profile"> 
     <div><input type="file" class="imgUpload" (change)=profileChange($event)></div>
       <span class="firstName" >*<input  class="firstName formfield " formControlName="FirstName" type="text"  placeholder="First Name"(ngModelChange)=FirstNameValidation($event)>
         <div class="text-danger" style="color:red" *ngIf="this.profileForm.get('FirstName').errors && this.profileForm.get('FirstName').touched">This is required field</div>
@@ -68,11 +68,17 @@
     </div>
     <div class="text-danger" style="color:red" *ngIf="this.address=='' && profileForm.get('Address').untouched  ">This is required field</div>
     </div>
-      <div class="tags"><input class="fullwidth tags formfield" formControlName="tags" type="text" placeholder="tags">
+      <div class="tags"><tag-input id="tags" name="tags" [(ngModel)]='tags'  class="fullwidth tags formfield" formControlName="tags" type="text" placeholder="tags"></tag-input>
         <div class="text-danger" style="color:red" *ngIf="this.profileForm.get('tags').errors && this.profileForm.get('tags').touched">This is required field</div>
-
       </div>
+      <div class="newsletter">
+        <input type="checkbox" formcontrolName="newsletter"> Sbscribe to newsletter
+      </div>
+      <!-- <tag-input id="tags" name="tags" [(ngModel)]='tags' required (click)=tagChange()></tag-input> -->
+     
+      <button type= "button"  class="clear" (click)= "closeRegisterModal()">Clear</button>
       <button type="submit" class="submit"  [disabled]="!profileForm.valid">Submit</button>
+ 
     </form>
   </div>
 
