@@ -44,6 +44,7 @@ export class FormComponent implements OnInit {
       console.log(response)
     })
     localStorage.setItem('reload','true')
+    this.router.navigate(['profile'])
 
   }
   whichaddress(e:any){

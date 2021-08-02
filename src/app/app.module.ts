@@ -9,6 +9,7 @@ import { NavComponent } from './appmoduleComponents/navbar/nav/nav.component';
 import { MidsectionHomeComponent } from './appmoduleComponents/midsection-home/midsection-home.component';
 import { SharedModule } from './shared/shared.module';
 import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
+import { CarouselComponent } from './appmoduleComponents/carousel/carousel.component';
 
 
 
@@ -17,7 +18,8 @@ import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     HomeComponent,
     NavComponent,
-    MidsectionHomeComponent
+    MidsectionHomeComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,48 @@
+#slider{
+   overflow: hidden;
+  
+
+ figure{
+    position: relative;
+    width:400%; //total width 
+
+    margin:0;
+    left:0;
+    animation: 20s slider infinite;
+
+    img{
+        height:90vh;
+        width:25%;   //25% of 400% i.e 100%
+        float: left;
+        
+    }
+}}
+
+
+
+@keyframes slider{
+    0%{
+        left:0;
+    }
+    25%{
+        left:0;
+    }
+    30%{
+        left:-100%;
+    }
+    55%{
+        left:-100%;
+    }
+    60%{
+        left:-200%;
+    }
+    85%{
+        left:-200%;
+    }
+    90%{
+        left:-300%
+    }
+    100%{
+        left:-300%
+    }
+}

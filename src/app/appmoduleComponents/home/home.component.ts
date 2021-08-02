@@ -12,7 +12,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
   openRegisterModal():void{
-    document.getElementById("myModal").style.display="block"
+    var modal=document.getElementById("myModal").style.display="block"
+    console.log(modal.length)
   }
 
 }
